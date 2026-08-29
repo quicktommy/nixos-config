@@ -117,7 +117,7 @@
     btop
     wget
     curl
-
+    gh
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
