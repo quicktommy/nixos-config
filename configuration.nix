@@ -118,6 +118,7 @@
     wget
     curl
     gh
+    uwsm
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
