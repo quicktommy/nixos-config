@@ -1,0 +1,19 @@
+{
+  "Applications": [
+    "/usr/share/applications/Alacritty.desktop",
+    "/usr/share/applications/code-oss.desktop",
+    "/usr/share/applications/com.shellyorg.shelly.desktop",
+    "/usr/share/applications/micro.desktop",
+    "/var/lib/flatpak/exports/share/applications/app.zen_browser.zen.desktop",
+    "/usr/share/applications/discord.desktop",
+    "/home/tommy/.local/share/applications/sober.desktop",
+    "/usr/share/applications/org.gnome.TextEditor.desktop",
+    "/usr/share/applications/yazi.desktop",
+    "/usr/share/applications/thunar.desktop",
+    "/usr/share/applications/nemo.desktop",
+    "/usr/share/applications/org.gnome.Nautilus.desktop",
+    "/usr/share/applications/org.kde.dolphin.desktop",
+    "/usr/share/applications/firefox.desktop",
+    "/usr/share/applications/cachyos-hello.desktop"
+  ]
+}

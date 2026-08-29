@@ -1,0 +1,9 @@
+{
+  "files": {
+    "apply.sh": "2ce09fc3353a907f5ef79e6e14e12cbe",
+    "template.toml": "8409448ae0d995afbc77c1e5c6bb8137",
+    "zen-userChrome.css": "5da48638d9ae90ef913cb2453f994753",
+    "zen-userContent.css": "0c4329edbaaed30fdaf128275776a93d"
+  },
+  "version": 1
+}

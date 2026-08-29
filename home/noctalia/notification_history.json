@@ -1,0 +1,62 @@
+{
+  "change_serial": 62,
+  "entries": [
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 57,
+      "notification": {
+        "actions": [],
+        "app_name": "CachyOS Update",
+        "body": "Reboot is recommended due to the upgrade of core system package(s).",
+        "category": null,
+        "desktop_entry": null,
+        "expiry_wall_ms": 1787430573486,
+        "icon": "system-reboot",
+        "id": 26,
+        "image_data": null,
+        "origin": "external",
+        "received_wall_ms": 1787430563486,
+        "summary": "Reboot recommended!",
+        "timeout": 10000,
+        "urgency": "critical"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "closed_by_call",
+      "event_serial": 59,
+      "notification": {
+        "actions": [
+          "default",
+          "View"
+        ],
+        "app_name": "discord",
+        "body": "𝐬𝐦𝐢𝐥𝐞 started a call.",
+        "category": null,
+        "desktop_entry": "discord",
+        "expiry_wall_ms": 1787583999022,
+        "icon": null,
+        "id": 27,
+        "image_data": {
+          "bits_per_sample": 8,
+          "channels": 4,
+          "has_alpha": true,
+          "height": 96,
+          "image_file": "i_7e70d54fbad6832b72f2ffef62911592.webp",
+          "row_stride": 384,
+          "width": 96
+        },
+        "origin": "external",
+        "received_wall_ms": 1787583992867,
+        "summary": "𝐬𝐦𝐢𝐥𝐞",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    }
+  ],
+  "next_id": 29,
+  "version": 2
+}

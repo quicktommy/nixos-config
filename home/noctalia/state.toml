@@ -1,0 +1,6 @@
+[config_migration_reminders]
+last_notification = """1787432102
+349d2b8905bf61ba,48284077ac1029cd"""
+
+[security_migrations]
+calendar_credentials_v1 = true
