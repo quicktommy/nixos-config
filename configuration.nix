@@ -4,7 +4,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   imports = [
-    ./hardware-configuration.nix
+    /etc/nixos/hardware-configuration.nix
     inputs.noctalia-greeter.nixosModules.default
   ];
 
