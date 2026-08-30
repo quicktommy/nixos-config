@@ -1,6 +1,9 @@
 {
   "Applications": {
     "/home/tommy/.local/share/applications/sober.desktop": 1,
+    "/run/current-system/sw/share/applications/spotify.desktop": 1,
+    "/run/current-system/sw/share/applications/steam.desktop": 1,
+    "/run/current-system/sw/share/applications/zen.desktop": 2,
     "/usr/share/applications/Alacritty.desktop": 3,
     "/usr/share/applications/cachyos-hello.desktop": 1,
     "/usr/share/applications/code-oss.desktop": 3,

@@ -7,6 +7,8 @@
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  programs.steam.enable = true;
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -119,6 +121,9 @@
     curl
     gh
     uwsm
+    discord
+    spotify
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 

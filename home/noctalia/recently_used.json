@@ -1,5 +1,8 @@
 {
   "Applications": [
+    "/run/current-system/sw/share/applications/spotify.desktop",
+    "/run/current-system/sw/share/applications/zen.desktop",
+    "/run/current-system/sw/share/applications/steam.desktop",
     "/usr/share/applications/Alacritty.desktop",
     "/usr/share/applications/code-oss.desktop",
     "/usr/share/applications/com.shellyorg.shelly.desktop",
