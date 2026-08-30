@@ -10,6 +10,11 @@ rm -rf "$HOME_DIR/.config/hypr"
 mkdir -p "$HOME_DIR/.config"
 cp -a "$NIX_HOME/hypr" "$HOME_DIR/.config/hypr"
 
+echo "Deploying Kitty..."
+rm -rf "$HOME_DIR/.config/kitty"
+mkdir -p "$HOME_DIR/.config"
+cp -a "$NIX_HOME/kitty" "$HOME_DIR/.config/kitty"
+
 echo "Deploying Noctalia..."
 rm -rf "$HOME_DIR/.local/state/noctalia"
 mkdir -p "$HOME_DIR/.local/state"
@@ -24,6 +29,7 @@ echo "Fixing ownership..."
 chown -R "$USER_NAME:users" \
     "$HOME_DIR/.config/hypr" \
     "$HOME_DIR/.local/state/noctalia" \
+    "$HOME_DIR/.config/kitty" \
     "$HOME_DIR/Pictures/Wallpapers"
 
 echo "Done."

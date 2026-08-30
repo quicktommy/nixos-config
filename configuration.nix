@@ -64,7 +64,11 @@
     isNormalUser = true;
     description = "tommy";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.fish;
   };
+
+  # Fih
+  programs.fish.enable = true;
 
   # Unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -79,6 +83,8 @@
     btop
     wget
     curl
+    fish
+    fishPlugins.pure
     gh
     uwsm
     discord
