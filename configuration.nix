@@ -5,7 +5,6 @@
 
   imports = [
     /etc/nixos/hardware-configuration.nix
-    inputs.noctalia-greeter.nixosModules.default
   ];
 
   # Bootloader
@@ -38,7 +37,6 @@
     layout = "pt";
     variant = "nodeadkeys";
   };
-  programs.noctalia-greeter.enable = true;
 
   # Hyprland
   programs.hyprland.enable = true;
