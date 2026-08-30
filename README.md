@@ -74,35 +74,60 @@ sudo nixos-rebuild switch --impure --flake /etc/nixos#nixos
 
 ## Installing on a Fresh Machine
 
-A fresh NixOS installation needs to bootstrap Git before the repository can be cloned.
+A fresh NixOS installation already creates `/etc/nixos` and generates a machine-specific `hardware-configuration.nix`.
 
-### 1. Get Git
+Because of this, the repository should **not** be cloned directly into `/etc/nixos`.
 
-If Git is not already available in the current environment:
+### 1. Generate the Hardware Configuration
+
+If the NixOS installer has not already generated it, generate one for the current machine:
+
+```bash
+sudo nixos-generate-config --root /
+```
+
+This creates:
+
+```text
+/etc/nixos/configuration.nix
+/etc/nixos/hardware-configuration.nix
+```
+
+The `hardware-configuration.nix` file remains local to the machine and is not committed to Git.
+
+### 2. Get Git
+
+If Git is not already installed:
 
 ```bash
 nix-shell -p git
 ```
 
-### 2. Clone the configuration
-
-Clone the repository into `/etc/nixos`:
+Verify it:
 
 ```bash
-sudo git clone https://github.com/quicktommy/nixos-config.git /etc/nixos
+git --version
 ```
 
-### 3. Generate the hardware configuration
+### 3. Clone the Configuration
 
-Generate a hardware configuration for the new machine:
+Clone the repository into your home directory:
 
 ```bash
-sudo nixos-generate-config --show-hardware-config > /etc/nixos/hardware-configuration.nix
+git clone https://github.com/quicktommy/nixos-config.git ~/nixos-config
 ```
 
-This file remains local and is not committed to Git.
+### 4. Copy the Configuration
 
-### 4. Build the system
+Copy the repository contents into `/etc/nixos`:
+
+```bash
+sudo cp -a ~/nixos-config/. /etc/nixos/
+```
+
+This copies the version-controlled configuration while leaving the machine's existing `hardware-configuration.nix` in place.
+
+### 5. Build the System
 
 Apply the configuration:
 
