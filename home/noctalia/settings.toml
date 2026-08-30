@@ -28,6 +28,8 @@ background_opacity = 0.0
 border_width = 2.0
 concave_edge_corners = false
 enabled = true
+inactive_opacity = 1.0
+inactive_scale = 1.0
 launcher_position = "start"
 margin_edge = 10
 pinned = [ "zen", "steam", "discord", "spotify" ]
@@ -138,6 +140,7 @@ source = "wallpaper"
 wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
+    builtin_ids = [ "gtk3", "gtk4", "hyprland", "kitty" ]
     community_ids = [ "zen-browser", "discord", "micro", "vscode", "steam", "fastfetch", "obs", "yazi" ]
 
 [wallpaper.default]
