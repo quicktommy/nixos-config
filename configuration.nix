@@ -5,6 +5,7 @@
 
   imports = [
     ./hardware-configuration.nix
+    inputs.noctalia-greeter.nixosModules.default
   ];
 
   # Bootloader
@@ -37,7 +38,7 @@
     layout = "pt";
     variant = "nodeadkeys";
   };
-  services.displayManager.sddm.enable = true;
+  programs.noctalia-greeter.enable = true;
 
   # Hyprland
   programs.hyprland.enable = true;
