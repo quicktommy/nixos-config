@@ -1,1 +1,4 @@
 hardware-configuration.nix
+
+# Machine-specific configuration
+/local/
