@@ -2,7 +2,7 @@
 
 TERMINAL     = "kitty"
 FILE_MANAGER = "kitty -e yazi"
-BROWSER      = "flatpak run app.zen_browser.zen"
+BROWSER      = "zen"
 EDITOR       = "gnome-text-editor --new-window"
 CALCULATOR   = "gnome-calculator"
 
