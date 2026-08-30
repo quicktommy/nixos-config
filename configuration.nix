@@ -83,9 +83,16 @@
     uwsm
     discord
     spotify
+    bibata-cursors
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
+
+  # Cursor
+  environment.variables = {
+    XCURSOR_THEME = "Bibata-Modern-Ice";
+    XCURSOR_SIZE = "24";
+  };
 
   # Steam
   programs.steam.enable = true;
