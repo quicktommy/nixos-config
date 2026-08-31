@@ -1,8 +1,10 @@
 { config, pkgs, inputs, ... }:
 
+let
+  userName = "tommy"; # IMPORTANT!! Change the variable value to the user YOU made during installation.
+in
+
 {
-  userName = "tommy";
-  
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   imports = [
