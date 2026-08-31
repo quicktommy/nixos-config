@@ -50,6 +50,9 @@ mv "$HOME_DIR/Pictures/Wallpapers.new" "$HOME_DIR/Pictures/Wallpapers"
 rm -rf "$HOME_DIR/Pictures/Wallpapers.old"
 
 echo "Fixing ownership..."
+mkdir -p \
+    "$HOME_DIR/.config/fish" \
+    "$HOME_DIR/.local/share/fish"
 chown -R "$USER_NAME:users" \
     "$HOME_DIR/.config/hypr" \
     "$HOME_DIR/.config/kitty" \
