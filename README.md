@@ -8,20 +8,20 @@ This configuration is designed to provide a reproducible desktop setup while kee
 
 ## What This Includes
 
-- **NixOS 26.05**
-- **Hyprland**
-- **Noctalia**
-- **Kitty**
-- **Yazi**
-- **Zen Browser**
-- **Fish**
-- **Steam**
-- **Discord**
-- **Spotify**
-- **Nautilus**
-- Custom wallpapers
-- Custom Hyprland configuration
-- Noctalia community templates and palettes
+* **NixOS 26.05**
+* **Hyprland**
+* **Noctalia**
+* **Kitty**
+* **Yazi**
+* **Zen Browser**
+* **Fish**
+* **Steam**
+* **Discord**
+* **Spotify**
+* **Nautilus**
+* Custom wallpapers
+* Custom Hyprland configuration
+* Noctalia community templates and palettes
 
 ## Repository Structure
 
@@ -116,28 +116,7 @@ sudo cp -a ~/nixos-config/. /etc/nixos/
 
 This preserves the machine's existing `hardware-configuration.nix`.
 
-### 5. Configure the Monitors
-
-The repository contains example monitor configuration in:
-
-```text
-/etc/nixos/home/hypr/config/variables.lua
-/etc/nixos/home/hypr/config/monitors.lua
-```
-
-After installing, identify the displays available on the machine with:
-
-```bash
-hyprctl monitors
-```
-
-Edit `variables.lua` to set `MONITOR1`, `MONITOR2`, etc. to the appropriate output names.
-
-Then edit `monitors.lua` to configure the desired resolution, refresh rate, position, and scale.
-
-The included configuration is intended to be a minimal starting point and may need to be adjusted for different hardware.
-
-### 6. Rebuild
+### 5. Rebuild
 
 Apply the configuration:
 
@@ -146,6 +125,14 @@ sudo nixos-rebuild switch --impure --flake /etc/nixos#nixos
 ```
 
 The rebuild installs the configured software and deploys the files from `home/` into the appropriate locations in the user's home directory.
+
+### 6. Reboot
+
+Reboot into the newly configured system:
+
+```bash
+sudo reboot
+```
 
 ## Starting Hyprland
 
@@ -161,6 +148,35 @@ start-hyprland
 ```
 
 Hyprland and Noctalia will then start using the deployed configuration.
+
+## Configure the Monitors
+
+Monitor configuration should be performed **after starting Hyprland**, since the available monitor outputs can be identified from the running Hyprland session.
+
+First, check the connected monitors:
+
+```bash
+hyprctl monitors
+```
+
+The repository contains example monitor configuration in:
+
+```text
+~/.config/hypr/config/variables.lua
+~/.config/hypr/config/monitors.lua
+```
+
+Edit `variables.lua` to set `MONITOR1`, `MONITOR2`, etc. to the output names shown by `hyprctl monitors`.
+
+Then edit `monitors.lua` to configure the desired resolution, refresh rate, position, and scale.
+
+The included configuration is intended to be a minimal starting point and may need to be adjusted for different hardware.
+
+After making the monitor changes, rebuild the system:
+
+```bash
+sudo nixos-rebuild switch --impure --flake /etc/nixos#nixos
+```
 
 ## Applying Changes
 
@@ -178,11 +194,11 @@ This repository is a **personal NixOS configuration**, not a general-purpose Nix
 
 It focuses on:
 
-- Reproducibility
-- Declarative system configuration
-- Version control
-- Personal desktop customization
-- Keeping machine-specific hardware data out of Git
-- Easy recovery after reinstalling NixOS
+* Reproducibility
+* Declarative system configuration
+* Version control
+* Personal desktop customization
+* Keeping machine-specific hardware data out of Git
+* Easy recovery after reinstalling NixOS
 
 **My setup, but declarative.**
