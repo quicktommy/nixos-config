@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-USER_NAME="tommy"
+USER_NAME="${USER_NAME:?USER_NAME must be set}"
 HOME_DIR="/home/$USER_NAME"
 NIX_HOME="/etc/nixos/home"
 
@@ -31,6 +31,8 @@ echo "Deploying Noctalia..."
 mkdir -p "$HOME_DIR/.local/state"
 rm -rf "$HOME_DIR/.local/state/noctalia.new"
 cp -a "$NIX_HOME/noctalia" "$HOME_DIR/.local/state/noctalia.new"
+sed -i "s|@HOME@|$HOME_DIR|g" \
+    "$HOME_DIR/.local/state/noctalia.new/settings.toml"
 rm -rf "$HOME_DIR/.local/state/noctalia.old"
 if [ -d "$HOME_DIR/.local/state/noctalia" ]; then
     mv "$HOME_DIR/.local/state/noctalia" "$HOME_DIR/.local/state/noctalia.old"

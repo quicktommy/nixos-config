@@ -144,13 +144,13 @@ wallpaper_scheme = "m3-tonal-spot"
     community_ids = [ "zen-browser", "discord", "micro", "vscode", "steam", "fastfetch", "obs", "yazi" ]
 
 [wallpaper.default]
-path = "/home/tommy/Pictures/Wallpapers/wallpaper.png"
+path = "@HOME@/Pictures/Wallpapers/wallpaper.png"
 
 [wallpaper.last]
-path = "/home/tommy/Pictures/Wallpapers/wallpaper.png"
+path = "@HOME@/Pictures/Wallpapers/wallpaper.png"
 
 [wallpaper.monitors.HDMI-A-1]
-path = "/home/tommy/Pictures/Wallpapers/wallpaper.png"
+path = "@HOME@/Pictures/Wallpapers/wallpaper.png"
 
 [wallpaper.monitors.eDP-1]
-path = "/home/tommy/Pictures/Wallpapers/wallpaper.png"
+path = "@HOME@/Pictures/Wallpapers/wallpaper.png"

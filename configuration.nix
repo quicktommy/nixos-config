@@ -1,6 +1,8 @@
 { config, pkgs, inputs, ... }:
 
 {
+  userName = "tommy";
+  
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   imports = [
@@ -58,9 +60,9 @@
   };
 
   # User
-  users.users."tommy" = {
+  users.users."${userName}" = {
     isNormalUser = true;
-    description = "tommy";
+    description = userName;
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.fish;
   };
@@ -105,7 +107,7 @@
   # Deploy user configuration
   system.activationScripts.deployHome = {
     text = ''
-      ${pkgs.bash}/bin/bash /etc/nixos/deploy-home.sh
+      USER_NAME="${userName}" ${pkgs.bash}/bin/bash /etc/nixos/deploy-home.sh
     '';
     deps = [ "users" ];
   };
