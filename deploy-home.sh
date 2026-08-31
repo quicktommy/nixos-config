@@ -58,6 +58,8 @@ mkdir -p \
 chown -R "$USER_NAME:users" \
     "$HOME_DIR/.config" \
     "$HOME_DIR/.local" \
+    "$HOME_DIR/.config/fish" \
+    "$HOME_DIR/.local/share/fish" \
     "$HOME_DIR/Pictures"
 
 echo "Done."
