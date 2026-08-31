@@ -1,5 +1,7 @@
 # Tommy's NixOS Configuration
 
+> ⚠️ **WORK IN PROGRESS:** This configuration is still being tested and is **not yet ready for general use**. Changes and fixes are still needed.
+
 A personal NixOS configuration built around **Hyprland + Noctalia**, managed with Nix flakes and Git.
 
 This configuration is designed to provide a reproducible desktop setup while keeping machine-specific hardware configuration local to each system.
