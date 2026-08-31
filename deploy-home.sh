@@ -54,11 +54,8 @@ mkdir -p \
     "$HOME_DIR/.config/fish" \
     "$HOME_DIR/.local/share/fish"
 chown -R "$USER_NAME:users" \
-    "$HOME_DIR/.config/hypr" \
-    "$HOME_DIR/.config/kitty" \
-    "$HOME_DIR/.config/fish" \
-    "$HOME_DIR/.local/share/fish" \
-    "$HOME_DIR/.local/state/noctalia" \
-    "$HOME_DIR/Pictures/Wallpapers"
+    "$HOME_DIR/.config" \
+    "$HOME_DIR/.local" \
+    "$HOME_DIR/Pictures"
 
 echo "Done."
