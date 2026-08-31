@@ -116,7 +116,35 @@ sudo cp -a ~/nixos-config/. /etc/nixos/
 
 This preserves the machine's existing `hardware-configuration.nix`.
 
-### 5. Rebuild
+### 5. Configure Your Username
+
+Before rebuilding, open:
+
+```text
+/etc/nixos/configuration.nix
+```
+
+At the top of the file, find:
+
+```nix
+let
+  userName = "tommy";
+```
+
+Change `"tommy"` to the username you created during the NixOS installation.
+
+For example:
+
+```nix
+let
+  userName = "yourusername";
+```
+
+**This is the only username value that needs to be changed.**
+
+The configuration uses this variable to create and configure the user and to deploy the home configuration to the correct `/home/<username>` directory.
+
+### 6. Rebuild
 
 Apply the configuration:
 
@@ -124,9 +152,9 @@ Apply the configuration:
 sudo nixos-rebuild switch --impure --flake /etc/nixos#nixos
 ```
 
-The rebuild installs the configured software and deploys the files from `home/` into the appropriate locations in the user's home directory.
+The rebuild installs the configured software and deploys the files from `home/` into the appropriate locations in the configured user's home directory.
 
-### 6. Reboot
+### 7. Reboot
 
 Reboot into the newly configured system:
 
@@ -159,20 +187,22 @@ First, check the connected monitors:
 hyprctl monitors
 ```
 
-The repository contains example monitor configuration in:
+The repository contains the monitor configuration in:
 
 ```text
-~/.config/hypr/config/variables.lua
-~/.config/hypr/config/monitors.lua
+/etc/nixos/home/hypr/config/variables.lua
+/etc/nixos/home/hypr/config/monitors.lua
 ```
+
+**Edit these files in the repository, not the deployed copies under `~/.config/hypr/`.**
 
 Edit `variables.lua` to set `MONITOR1`, `MONITOR2`, etc. to the output names shown by `hyprctl monitors`.
 
 Then edit `monitors.lua` to configure the desired resolution, refresh rate, position, and scale.
 
-The included configuration is intended to be a minimal starting point and may need to be adjusted for different hardware.
+The configuration under `home/` is the source that gets deployed to the user's home directory during a rebuild. Therefore, monitor changes made only to `~/.config/hypr/` may be overwritten by the next rebuild.
 
-After making the monitor changes, rebuild the system:
+After making the monitor changes in `/etc/nixos/home/hypr/config/`, rebuild the system:
 
 ```bash
 sudo nixos-rebuild switch --impure --flake /etc/nixos#nixos
@@ -180,7 +210,7 @@ sudo nixos-rebuild switch --impure --flake /etc/nixos#nixos
 
 ## Applying Changes
 
-After modifying the NixOS configuration or files in the repository, rebuild with:
+After modifying the NixOS configuration or files under `home/`, rebuild with:
 
 ```bash
 sudo nixos-rebuild switch --impure --flake /etc/nixos#nixos
@@ -202,3 +232,4 @@ It focuses on:
 * Easy recovery after reinstalling NixOS
 
 **My setup, but declarative.**
+
